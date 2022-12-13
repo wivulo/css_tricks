@@ -1,0 +1,103 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+html, body{width: 100%; height: 100%;}
+
+h2{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    font-size: 8em;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-left: 100px;
+}
+
+.circle{
+    width: 15%;
+    height: 80px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.circle::before{
+    content: attr(data-letter);
+    position: absolute;
+    color: #ffc000;
+    font-family: sans-serif;
+    left: 100%;
+    transform: rotate(15deg);
+    opacity: 0;
+    text-shadow: 3px 3px 1px #000fff;
+}
+
+.circle:nth-child(1){
+    animation: turn 500ms linear 1 forwards;
+}
+
+.circle:nth-child(2){
+    animation: turn 500ms linear 500ms 1 forwards;
+}
+
+.circle:nth-child(3){
+    animation: turn 500ms linear 1s 1 forwards;
+}
+
+.circle:nth-child(4){
+    animation: turn 500ms linear 1.5s 1 forwards;
+}
+
+.circle:nth-child(5){
+    animation: turn 500ms linear 2s 1 forwards;
+}
+
+.circle:nth-child(6){
+    animation: turn 500ms linear 2.5s 1 forwards;
+}
+
+@keyframes turn{
+    0%{
+        transform: rotate(0);
+    }
+
+    100%{
+        transform: rotate(-180deg);
+    }
+}
+
+.circle:nth-child(1)::before{
+    animation: jump 500ms linear 1 forwards;
+}
+
+.circle:nth-child(2)::before{
+    animation: jump 500ms linear 500ms 1 forwards;
+}
+
+.circle:nth-child(3)::before{
+    animation: jump 500ms linear 1s 1 forwards;
+}
+
+.circle:nth-child(4)::before{
+    animation: jump 500ms linear 1.5s 1 forwards;
+}
+
+.circle:nth-child(5)::before{
+    animation: jump 500ms linear 2s 1 forwards;
+}
+
+.circle:nth-child(6)::before{
+    animation: jump 500ms linear 2.5s 1 forwards;
+}
+
+@keyframes jump{
+    0%{
+        opacity: 0;
+        transform: rotate(15deg);
+    }
+
+    100%{
+        opacity: 1;
+        transform: rotate(180deg);
+    }
+}
